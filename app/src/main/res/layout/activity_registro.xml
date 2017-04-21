@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.proyecto.julio.rutasutecv6.Registro">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/txtMensaje"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="50"
+            android:text="Registro" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:id="@+id/txtnombre"
+            android:hint="nombre"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/txtapellido"
+            android:hint="apellido"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:id="@+id/txtusuario"
+            android:hint="usuario"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtfecha"
+            android:hint="fecha de nacimiento"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:id="@+id/txtpass"
+            android:hint="password"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:id="@+id/txtemail"
+            android:hint="email"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnResgistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="registrar" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cancelar" />
+    </LinearLayout>
+
+</LinearLayout>

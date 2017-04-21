@@ -9,16 +9,16 @@ import java.util.ArrayList;
 public class AlmacenarDatos {
     private ArrayList Nombre = new ArrayList();
     private ArrayList Apellido = new ArrayList();
-    private ArrayList Telefono = new ArrayList();
-    private ArrayList Direccion = new ArrayList();
+    private ArrayList fecha = new ArrayList();
+    private ArrayList email = new ArrayList();
     private ArrayList Password = new ArrayList();
     private ArrayList Usuario = new ArrayList();
 
-    public void guardar(String n,String a,String t,String d,String p,String usu){
+    public void guardar(String n,String a,String f,String e,String p,String usu){
         Nombre.add(n);
         Apellido.add(a);
-        Telefono.add(t);
-        Direccion.add(d);
+        fecha.add(f);
+        email.add(e);
         Password.add(p);
         Usuario.add(usu);
     }
@@ -33,10 +33,10 @@ public class AlmacenarDatos {
         return Usuario;
     }
     public ArrayList Telefono(){
-        return Telefono;
+        return fecha;
     }
     public ArrayList Direccion(){
-        return Direccion;
+        return email;
     }
     public ArrayList Password(){
         return Password;

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import Clogica.Session;
@@ -15,6 +16,7 @@ public class Login extends AppCompatActivity
 
     private EditText txtusuario,txtpass;
     private Button btnLogin;
+    private TextView txtregistro;
     Session usu = new Session();
 
     @Override
@@ -26,7 +28,7 @@ public class Login extends AppCompatActivity
         txtusuario = (EditText)findViewById(R.id.txtusuaio);
         txtpass = (EditText)findViewById(R.id.txtpass);
         btnLogin = (Button)findViewById(R.id.btnLogin);
-
+        txtregistro=(TextView)findViewById(R.id.txtregistro);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,13 @@ public class Login extends AppCompatActivity
                 {
                     Toast.makeText(getApplicationContext(),"error datos no valido",Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        txtregistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new  Intent(getApplicationContext(),Registro.class);
+                startActivity(i);
             }
         });
     }

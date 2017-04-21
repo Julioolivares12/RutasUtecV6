@@ -10,6 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="94dp"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtMensaje"
+            android:text="Login"
+            android:textColor="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="50dp"
+            android:textAlignment="center"/>
 
     </LinearLayout>
     <LinearLayout
@@ -49,6 +58,15 @@
             android:layout_weight="0.03"
             android:text="login"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtregistro"
+            android:text="no posees una ccrea una aqui"
+            android:textColor="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="17dp"
+            android:textAlignment="center"/>
     </LinearLayout>
 
 </LinearLayout>
