@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <meta-data
         android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version"/>
+        />
     <meta-data
         android:name="com.google.android.geo.API_KEY"
         android:value="@string/maps_key"/>
@@ -33,6 +33,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Registro"></activity>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCz8H26kXTUhADI3LaOQZHk0EPCMBqQW_E"
+             />
     </application>
 
 </manifest>
