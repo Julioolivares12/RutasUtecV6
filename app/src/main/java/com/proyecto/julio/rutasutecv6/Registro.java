@@ -55,7 +55,8 @@ public class Registro extends AppCompatActivity {
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent salir = new Intent(getApplicationContext(),Login.class);
+                startActivity(salir);
             }
         });
     }
