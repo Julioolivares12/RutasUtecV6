@@ -33,14 +33,14 @@ public class Login extends AppCompatActivity
                 String u = txtusuario.getText().toString();
                 String p= txtpass.getText().toString();
                 int usuarioEncontrado = usu.Login(u,p);
-                /*if(usuarioEncontrado>=0){
+                if(usuarioEncontrado>=0){
                     Intent menu = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(menu);
                     Toast.makeText(getApplicationContext()," Bienvenido",Toast.LENGTH_SHORT).show();
                 }else
                 {
                     Toast.makeText(getApplicationContext(),"error datos no valido",Toast.LENGTH_SHORT).show();
-                }*/
+                }
             }
         });
     }
