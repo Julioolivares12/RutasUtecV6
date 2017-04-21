@@ -1,8 +1,10 @@
 package com.proyecto.julio.rutasutecv6;
 
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -78,13 +80,18 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        Fragment fragment = null;
+        Boolean FragmentTransaction= false;
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_inicio) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            fragment= new Inicio_fragment();
+            FragmentTransaction =true;
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_mapas) {
+
+        } else if (id == R.id.nav_buscar) {
 
         } else if (id == R.id.nav_manage) {
 
@@ -92,6 +99,11 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        }
+        if(FragmentTransaction){
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment).commit();
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
