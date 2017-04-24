@@ -17,7 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,Inicio_fragment.OnFragmentInteractionListener,buscar_fragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,Inicio_fragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,13 +92,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_mapas) {
 
-
         } else if (id == R.id.nav_buscar) {
-            fragment = new buscar_fragment();
-            FragmentTransaction=true;
 
         } else if (id == R.id.nav_manage) {
-
 
         } else if (id == R.id.nav_share) {
 
