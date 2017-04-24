@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction =true;
 
         } else if (id == R.id.nav_mapas) {
+            fragment= new mapas_fragment();
+            FragmentTransaction=true;
 
         } else if (id == R.id.nav_buscar) {
 
