@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 /**
@@ -19,6 +22,9 @@ public class buscar_fragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    private TextView tvBuscar;
+    private EditText txtBuscar;
+    private Button btnBuscar;
     public buscar_fragment() {
         // Required empty public constructor
     }
@@ -28,7 +34,19 @@ public class buscar_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_buscar_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_buscar_fragment, container, false);
+        tvBuscar = (TextView)view.findViewById(R.id.txtBuscar);
+        txtBuscar = (EditText)view.findViewById(R.id.txtBuscar);
+        btnBuscar = (Button)view.findViewById(R.id.btnBuscar);
+
+
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              Fragment  fragment= new map_fragment();
+            }
+        });
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -95,6 +95,8 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction=true;
 
         } else if (id == R.id.nav_buscar) {
+            fragment = new  buscar_fragment();
+            FragmentTransaction=true;
 
         } else if (id == R.id.nav_manage) {
 

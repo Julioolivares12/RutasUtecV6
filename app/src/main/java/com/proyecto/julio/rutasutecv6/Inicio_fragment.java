@@ -37,7 +37,7 @@ public class Inicio_fragment extends Fragment {
         // con este arreglo rutas se llena la lista
          String[] rutas ={"Ruta 7","Ruta 11","Ruta 29","Ruta 3","Ruta","Ruta 101"};
         //creo el adaptador para la lista
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,rutas);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,rutas);
 
         listView=(ListView)view.findViewById(R.id.list_item);
 
