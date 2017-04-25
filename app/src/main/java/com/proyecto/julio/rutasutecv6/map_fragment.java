@@ -1,5 +1,6 @@
 package com.proyecto.julio.rutasutecv6;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -69,6 +70,11 @@ public class map_fragment extends Fragment implements OnMapReadyCallback{
     public void onLowMemory(){
         super.onLowMemory();
         mapView.onLowMemory();
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 
 }

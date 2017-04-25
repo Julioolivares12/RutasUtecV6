@@ -17,7 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,Inicio_fragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,Inicio_fragment.OnFragmentInteractionListener,map_fragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction =true;
 
         } else if (id == R.id.nav_mapas) {
-            fragment= new mapas_fragment();
+            fragment= new map_fragment();
             FragmentTransaction=true;
 
         } else if (id == R.id.nav_buscar) {
