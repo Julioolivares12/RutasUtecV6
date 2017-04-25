@@ -43,7 +43,7 @@ public class buscar_fragment extends Fragment {
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              Fragment  fragment= new map_fragment();
+
             }
         });
         return view;
