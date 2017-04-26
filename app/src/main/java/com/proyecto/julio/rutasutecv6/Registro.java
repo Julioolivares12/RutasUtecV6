@@ -43,7 +43,7 @@ public class Registro extends AppCompatActivity {
                 email=txtemail.getText().toString();
                 almacenarDatos.guardar(nom,ape,fec,email,pass,usu);
                 Snackbar.make(v, "datos almacenados", Snackbar.LENGTH_LONG)
-                        .setAction("presiona si quieres ir a login", new View.OnClickListener() {
+                        .setAction(" quieres ir a login", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 Intent i = new Intent(getApplicationContext(),Login.class);
