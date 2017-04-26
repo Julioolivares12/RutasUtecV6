@@ -9,6 +9,10 @@ public class Session
 
     private ArrayList usuarios = new ArrayList();
     private ArrayList password = new ArrayList();
+    private ArrayList Nombre = new ArrayList();
+    private ArrayList Apellido = new ArrayList();
+    private ArrayList fecha = new ArrayList();
+    private ArrayList email = new ArrayList();
     private ArrayList tipo = new ArrayList();
 
     public Session()
@@ -20,6 +24,14 @@ public class Session
         usuarios.add("Roberto");
         password.add("1234");
         tipo.add("B");
+    }
+    public void guardar(String n,String a,String f,String e,String p,String usu){
+        Nombre.add(n);
+        Apellido.add(a);
+        fecha.add(f);
+        email.add(e);
+        password.add(p);
+        usuarios.add(usu);
     }
 
     public int Login(String usu,String pass)

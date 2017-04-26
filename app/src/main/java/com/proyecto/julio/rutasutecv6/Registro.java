@@ -36,11 +36,11 @@ public class Registro extends AppCompatActivity {
             public void onClick(View v) {
                 String nom,ape,usu,fec,pass,email;
                 nom=txtnombre.getText().toString();
-                ape=txtnombre.getText().toString();
-                usu=txtnombre.getText().toString();
-                fec=txtnombre.getText().toString();
-                pass=txtnombre.getText().toString();
-                email=txtnombre.getText().toString();
+                ape=txtapellido.getText().toString();
+                usu=txtusuario.getText().toString();
+                fec=txtfechanac.getText().toString();
+                pass=txtpassword.getText().toString();
+                email=txtemail.getText().toString();
                 almacenarDatos.guardar(nom,ape,fec,email,pass,usu);
                 Snackbar.make(v, "datos almacenados", Snackbar.LENGTH_LONG)
                         .setAction("presiona si quieres ir a login", new View.OnClickListener() {
