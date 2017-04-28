@@ -1,4 +1,4 @@
-<<<<<<< Original<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
 package="com.proyecto.julio.rutasutecv6">
 
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -24,7 +24,8 @@ package="com.proyecto.julio.rutasutecv6">
         android:value="AIzaSyCz8H26kXTUhADI3LaOQZHk0EPCMBqQW_E" />
 </application>
 
-</manifest>=======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -49,5 +50,5 @@ package="com.proyecto.julio.rutasutecv6">
 
     </activity>
 </application>
-
-</manifest>>>>>>>> Added
+    </manifest>
+    </manifest>
