@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import Clogica.Rutas;
+import Clogica.RutasAdapter;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,14 +39,24 @@ public class Inicio_fragment extends Fragment {
 
         // con este arreglo rutas se llena la lista
 
-        String[] rutas ={"Ruta 7","Ruta 11","Ruta 29","Ruta 3","Ruta","Ruta 101"};
-        //creo el adaptador para la lista
-        ArrayAdapter<String> adaptador = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,rutas);
+       /* String[] rutas ={"Ruta 7","Ruta 11","Ruta 29","Ruta 3","Ruta","Ruta 101"};
+        //creo el adaptador para la lista*/
+        Rutas rutas_datos[] = new Rutas[]{
+                new Rutas(android.R.drawable.ic_lock_idle_alarm,"ruta 7"),
+                new Rutas(android.R.drawable.ic_dialog_map,"ruta 11"),
+                new Rutas(android.R.drawable.ic_dialog_map,"ruta 29"),
+                new Rutas(android.R.drawable.ic_dialog_map,"ruta 3"),
+                new Rutas(android.R.drawable.ic_dialog_map,"ruta 101")
+        };
+       // ArrayAdapter<String> adaptador = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,rutas);
 
-        listView=(ListView)view.findViewById(R.id.list_item);
 
+
+        RutasAdapter adapter new RutasAdapter(this,R.layout.list_view_row,rutas_datos);
         //asigno el adaptado a mi lista
-        listView.setAdapter(adaptador);
+        listView=(ListView)view.findViewById(R.id.list_item);
+        View header = (View)getLayoutInflater().inflate(android.R.layout.list_header_row);
+       // listView.setAdapter(adaptador);
 
         return view;
     }
