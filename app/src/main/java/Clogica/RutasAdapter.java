@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.proyecto.julio.rutasutecv6.R;
+
 /**
  * Created by julio on 27/04/2017.
  */

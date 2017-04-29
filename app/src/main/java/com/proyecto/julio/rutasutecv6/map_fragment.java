@@ -19,24 +19,25 @@ import com.google.android.gms.plus.model.people.Person;
  * Created by julio on 04-23-17.
  */
 
-public class map_fragment extends Fragment implements OnMapReadyCallback{
-    MapView mapView;
-    GoogleMap map;
+public class map_fragment extends Fragment /*implements OnMapReadyCallback*/{
+   /* MapView mapView;
+    GoogleMap map;*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.map_fragment,container,false);
 
+        /*
         //obtengo el mapa del xml
         mapView = (MapView)view.findViewById(R.id.mapview);
         mapView.onCreate(savedInstanceState);
 
         //obtengo el mapa de mapview
         mapView.getMapAsync(this);
-
+        */
         return view;
     }
-
+    /*
     @Override
     public void onMapReady(GoogleMap googleMap) {
         LatLng latLng = new LatLng(13.6462418,-89.10387830000002);
@@ -71,7 +72,7 @@ public class map_fragment extends Fragment implements OnMapReadyCallback{
         super.onLowMemory();
         mapView.onLowMemory();
     }
-
+    */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
