@@ -11,9 +11,23 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class RutasUtecBD extends SQLiteOpenHelper
 {
-    public RutasUtecBD(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
+    public static final int DATABASE_VERSION=1;
+    public static final String DATABASE_NAME="RutasUtecDB.db";
+    public static final String tablausuarios ="usuario";
+    public static final String id_usuario="id";
+    public static final String email="email";
+    public static final String usuario="usuairo";
+    public static final String pass="pass";
+    public static final String id_tipo="id_tipo";
+
+    //variables para la tabla tipo usuario
+    public static final String idtipo="idtipo";
+    public static final String tipo="tipo";
+
+
+    public RutasUtecBD(Context context)
     {
-        super(context, name, factory, version);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
