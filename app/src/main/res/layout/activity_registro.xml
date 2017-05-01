@@ -20,11 +20,12 @@
             android:ems="50"
             android:text="Registro" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <EditText
+        <!--<EditText
             android:layout_width="match_parent"
             android:layout_height="62dp"
             android:id="@+id/txtnombre"
@@ -33,27 +34,29 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:id="@+id/txtapellido"
-            android:hint="apellido"/>
+            android:hint="apellido"/>-->
         <EditText
+            android:id="@+id/txtusuario"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:id="@+id/txtusuario"
-            android:hint="usuario"/>
+            android:hint="usuario" />
+
         <EditText
+            android:id="@+id/txtemail"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:hint="email" />
+        <!--<EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtfecha"
-            android:hint="fecha de nacimiento"/>
+            android:hint="fecha de nacimiento"/>-->
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="53dp"
             android:id="@+id/txtpass"
-            android:hint="password"/>
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:id="@+id/txtemail"
-            android:hint="email"/>
+            android:hint="password" />
+
 
     </LinearLayout>
 
@@ -67,6 +70,7 @@
             android:id="@+id/btnResgistrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="registrar"
             android:text="registrar" />
 
         <Button

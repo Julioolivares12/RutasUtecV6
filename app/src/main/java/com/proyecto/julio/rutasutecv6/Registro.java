@@ -1,6 +1,8 @@
 package com.proyecto.julio.rutasutecv6;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,27 +12,27 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import Clogica.AlmacenarDatos;
+import DatosDB.RutasUtecDB;
 
 public class Registro extends AppCompatActivity {
 
-    private EditText txtnombre,txtapellido,txtusuario,txtfechanac,txtpassword,txtemail;
+    private EditText txtusuario,txtpassword,txtemail;
     private Button btnRegistrar,btnCancelar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        txtnombre = (EditText)findViewById(R.id.txtnombre);
-        txtapellido = (EditText)findViewById(R.id.txtapellido);
+
         txtusuario = (EditText)findViewById(R.id.txtusuaio);
-        txtfechanac = (EditText)findViewById(R.id.txtfecha);
+
         txtpassword = (EditText)findViewById(R.id.txtpass);
         txtemail = (EditText)findViewById(R.id.txtemail);
 
         btnRegistrar=(Button)findViewById(R.id.btnResgistrar);
         btnCancelar=(Button)findViewById(R.id.btnCancelar);
 
-        final AlmacenarDatos almacenarDatos = new AlmacenarDatos();
+        /*final AlmacenarDatos almacenarDatos = new AlmacenarDatos();
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +53,7 @@ public class Registro extends AppCompatActivity {
                             }
                         }).show();
             }
-        });
+        });*/
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,5 +61,19 @@ public class Registro extends AppCompatActivity {
                 startActivity(salir);
             }
         });
+    }
+    public void registrar(View view){
+        RutasUtecDB rutasUtecDB = new RutasUtecDB(this);
+        SQLiteDatabase db = rutasUtecDB.getWritableDatabase();
+        String usu = txtusuario.getText().toString();
+        String email = txtemail.getText().toString();
+        String pass = txtpassword.getText().toString();
+        ContentValues values = new ContentValues();
+        values.put("usuario",usu);
+        values.put("correo",email);
+        values.put("pass",pass);
+
+        db.insert("usuarios",null,values);
+        db.close();
     }
 }
