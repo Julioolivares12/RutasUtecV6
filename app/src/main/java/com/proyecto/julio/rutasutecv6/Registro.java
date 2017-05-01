@@ -75,5 +75,7 @@ public class Registro extends AppCompatActivity {
 
         db.insert("usuarios",null,values);
         db.close();
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
     }
 }
