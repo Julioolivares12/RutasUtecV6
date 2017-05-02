@@ -20,7 +20,7 @@ public class RutasUtecDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //con esta parte de codigo creo la tabla para los usuarios
+        //qui creo la tabla para los usuarios
         db.execSQL("CREATE TABLE "+ UsuariosContract.UsuariosEntry.Table_name+"("
                 + UsuariosContract.UsuariosEntry.idusu+"INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + UsuariosContract.UsuariosEntry.usuario+"TEXT NOT NULL,"
@@ -29,11 +29,20 @@ public class RutasUtecDB extends SQLiteOpenHelper {
                 + UsuariosContract.UsuariosEntry.idtipousu+"INTEGER NOT NULL"
                 + "UNIQUE ("+ UsuariosContract.UsuariosEntry.idusu+"))"
         );
+        //aqui creo la clase tipo usuario
         db.execSQL("CREATE TABLE "+TipoUsuarioContract.TipoUsuarioEntry.Table_name+"("
         + TipoUsuarioContract.TipoUsuarioEntry.id+"INTEGER PRIMARY KEY AUTOINCREMENT,"
         + TipoUsuarioContract.TipoUsuarioEntry.tipo+"TEXT NOT NULL"
         +"UNIQUE ("+ TipoUsuarioContract.TipoUsuarioEntry.id+"))"
         );
+        //aqui creo la tabla para tipo rutas
+        db.execSQL("CREATE TABLE"+ TipoUsuarioContract.TipoUsuarioEntry.Table_name+"("
+        + TipoRutasContrac.TipoRutasEntry.idtipoRuta+"INTEGER PRIMARY KEY AUTOINCREMENT,"
+        + TipoRutasContrac.TipoRutasEntry.tipoRuta+"TEXT NOT NULL"
+        +"UNIQUE ("+TipoRutasContrac.TipoRutasEntry.idtipoRuta+"))"
+        );
+        //creando la tabla para rutas
+        
         //insertando datos a un campo de la tabla tipo
         ContentValues tipousu = new ContentValues();
         tipousu.put(TipoUsuarioContract.TipoUsuarioEntry.tipo,"admin");
