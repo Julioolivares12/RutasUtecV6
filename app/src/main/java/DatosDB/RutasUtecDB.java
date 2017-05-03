@@ -18,6 +18,8 @@ public class RutasUtecDB extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         //qui creo la tabla para los usuarios
@@ -42,7 +44,7 @@ public class RutasUtecDB extends SQLiteOpenHelper {
         +"UNIQUE ("+TipoRutasContrac.TipoRutasEntry.idtipoRuta+"))"
         );
         //creando la tabla para rutas
-        
+
         //insertando datos a un campo de la tabla tipo
         ContentValues tipousu = new ContentValues();
         tipousu.put(TipoUsuarioContract.TipoUsuarioEntry.tipo,"admin");
