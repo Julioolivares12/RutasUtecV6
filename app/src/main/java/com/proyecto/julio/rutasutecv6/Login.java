@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity
     private EditText txtusuario,txtpass;
     private Button btnLogin;
     private TextView txtregistro;
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
