@@ -19,6 +19,10 @@ public class usuarios {
         this.pass=pass;
         this.idtipousu=idtipousu;
     }
+    public usuarios(String usuario,String pass){
+        this.usuario=usuario;
+        this.pass=pass;
+    }
     public int getIdusuario(){
         return idusuario;
     }
