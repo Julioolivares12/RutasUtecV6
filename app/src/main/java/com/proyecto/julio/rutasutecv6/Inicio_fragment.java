@@ -12,10 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import Clogica.Rutas;
-import Clogica.RutasAdapter;
-import Clogica.RutasBaseAdapter;
-import Clogica.RutasModel;
+
 
 
 /**
@@ -52,7 +49,7 @@ public class Inicio_fragment extends Fragment {
 
        /*
         //creo el adaptador para la lista*/
-       // String[] rutas ={"Ruta 7","Ruta 11","Ruta 29","Ruta 3","Ruta","Ruta 101"};
+        String[] rutas ={"Ruta 7","Ruta 11","Ruta 29","Ruta 3","Ruta","Ruta 101"};
         /*Rutas rutas_datos[] = new Rutas[]{
                 new Rutas(android.R.drawable.ic_lock_idle_alarm,"ruta 7"),
                 new Rutas(android.R.drawable.ic_dialog_map,"ruta 11"),
@@ -60,7 +57,7 @@ public class Inicio_fragment extends Fragment {
                 new Rutas(android.R.drawable.ic_dialog_map,"ruta 3"),
                 new Rutas(android.R.drawable.ic_dialog_map,"ruta 101")
         };*/
-       // ArrayAdapter<String> adaptador = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,rutas);
+       ArrayAdapter<String> adaptador = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,rutas);
 
 
 
@@ -72,22 +69,22 @@ public class Inicio_fragment extends Fragment {
         //RutasAdapter adapter = new RutasAdapter(getActivity(),R.layout.listview_item_row,rutas_datos);
         //View header = (View)getLayoutInflater.inflate(android.R.layout.list_content);
         //View header = (View)getActivity().getLayoutInflater().inflate(R.layout.list_header_row,null);
-       // listView.setAdapter(adaptador);
+        listView.setAdapter(adaptador);
        // listView.addHeaderView(header);
        // ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getApplicationContext(),android.R.layout.simple_list_item_1,rutas);
-        getDataList();
-        listView.setAdapter(new RutasBaseAdapter(context,myList));
+       // getDataList();
+       // listView.setAdapter(new RutasBaseAdapter(context,myList));
 
         return view;
     }
-    public void getDataList(){
+    /*public void getDataList(){
         for (int i=0;i<=title.length;i++){
             RutasModel listaRutas = new RutasModel();
             listaRutas.setTitle(title[i]);
             listaRutas.setImgResid(img[i]);
             myList.add(listaRutas);
         }
-    }
+    }*/
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -129,3 +126,4 @@ public class Inicio_fragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 }
+
