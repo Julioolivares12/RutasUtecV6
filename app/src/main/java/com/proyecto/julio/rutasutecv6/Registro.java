@@ -44,6 +44,7 @@ public class Registro extends AppCompatActivity {
                 String pass = txtpassword.getText().toString();
 
                 db.execSQL("insert into usuarios (usuario,email,pass,idtipousu) values('"+usu+"','"+email+"','"+pass+"',2)");
+                db.close();
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
             }
