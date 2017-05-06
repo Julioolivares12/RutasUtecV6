@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         btnLogin.setOnClickListener(this);
         txtregistro.setOnClickListener(this);
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this,"rutasUtec",null,1);
+        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext(),"rutasUtec",null,1);
         db=databaseHelper.getWritableDatabase();
 
     }

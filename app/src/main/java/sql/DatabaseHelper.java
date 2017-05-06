@@ -32,9 +32,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMMNA_PASS="pass";
     private static final String COLUMMNA_ID_TIPO_USU="idtipousu";
 
-    private String CREAR_TABLA_USUARIO="CREATE TABLE "+TABLA_USUARIO+"("+COLUMNA_USUARIO_ID+"INTEGER PRIMARY KEY AUTOINCREMENT,"+COLUMMNA_USUARIO+"TEXT,"
-            +COLUMMNA_EMAIL+"TEXT"+COLUMMNA_PASS+"TEXT"+COLUMMNA_ID_TIPO_USU+"INTEGER"+")";
-    private String DROP_TABLA_USUARIO="DROP TABLE IF EXISTS "+TABLA_USUARIO;
+    private String CREAR_TABLA_USUARIO="CREATE TABLE "
+            +TABLA_USUARIO
+            +"("+COLUMNA_USUARIO_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
+            +COLUMMNA_USUARIO+" TEXT,"
+            +COLUMMNA_EMAIL +" TEXT,"
+            +COLUMMNA_PASS +" TEXT,"
+            +COLUMMNA_ID_TIPO_USU+" INTEGER"+")";
+    private String DROP_TABLA_USUARIO=" DROP TABLE IF EXISTS "+TABLA_USUARIO;
 
     public DatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -47,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREAR_TABLA_USUARIO);
-        db.execSQL("insert into usuarios values ('julio','julioolivares90@gmail.com','123',1)");
+       db.execSQL("insert into usuarios values (1,'julio','julioolivares90@gmail.com','123',1)");
     }
 
     @Override

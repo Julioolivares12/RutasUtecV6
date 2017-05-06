@@ -39,7 +39,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         btnRegistrar.setOnClickListener(this);
         btnCancelar.setOnClickListener(this);
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        DatabaseHelper databaseHelper = new DatabaseHelper(this,"rutasUtec",null,1);
         db = databaseHelper.getWritableDatabase();
     }
 
@@ -51,7 +51,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 String email = txtemail.getText().toString();
                 String pass = txtpassword.getText().toString();
 
-                db.execSQL("insert into usuarios (usuario,email,pass,idtipousu) values('"+usu+"','"+email+"','"+pass+"',2)");
+                db.execSQL("insert into usuarios (usuario,correo,pass,idtipousu) values('"+usu+"','"+email+"','"+pass+"',2)");
                 db.close();
 
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
