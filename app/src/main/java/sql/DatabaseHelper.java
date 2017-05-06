@@ -36,6 +36,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             +COLUMMNA_EMAIL+"TEXT"+COLUMMNA_PASS+"TEXT"+COLUMMNA_ID_TIPO_USU+"INTEGER"+")";
     private String DROP_TABLA_USUARIO="DROP TABLE IF EXISTS "+TABLA_USUARIO;
 
+    public DatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }

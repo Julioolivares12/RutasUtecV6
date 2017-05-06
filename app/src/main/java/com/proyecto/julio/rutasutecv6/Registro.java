@@ -9,16 +9,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 
 
 import sql.DatabaseHelper;
 
-public class Registro extends AppCompatActivity {
+public class Registro extends AppCompatActivity implements View.OnClickListener {
 
     private EditText txtusuario,txtpassword,txtemail;
     private Button btnRegistrar,btnCancelar;
+
+    SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,29 +36,31 @@ public class Registro extends AppCompatActivity {
         btnRegistrar=(Button)findViewById(R.id.btnResgistrar);
         btnCancelar=(Button)findViewById(R.id.btnCancelar);
 
+        btnRegistrar.setOnClickListener(this);
+        btnCancelar.setOnClickListener(this);
 
-        btnRegistrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-                SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        db = databaseHelper.getWritableDatabase();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnResgistrar:
                 String usu = txtusuario.getText().toString();
                 String email = txtemail.getText().toString();
                 String pass = txtpassword.getText().toString();
 
                 db.execSQL("insert into usuarios (usuario,email,pass,idtipousu) values('"+usu+"','"+email+"','"+pass+"',2)");
                 db.close();
+
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
-            }
-        });
-        btnCancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.btnCancelar:
                 Intent salir = new Intent(getApplicationContext(),Login.class);
                 startActivity(salir);
-            }
-        });
+                break;
+        }
     }
-
 }

@@ -14,13 +14,16 @@ import android.widget.Toast;
 import sql.DatabaseHelper;
 
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private EditText txtusuario, txtpass;
     private Button btnLogin;
     private TextView txtregistro;
     private Cursor fila;
+    SQLiteDatabase db;
 
+    //DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+   // SQLiteDatabase db =databaseHelper.getWritableDatabase();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +34,20 @@ public class Login extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btnLogin);
         txtregistro = (TextView) findViewById(R.id.txtregistro);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-                SQLiteDatabase db =databaseHelper.getWritableDatabase();
+        btnLogin.setOnClickListener(this);
+        txtregistro.setOnClickListener(this);
 
+        DatabaseHelper databaseHelper = new DatabaseHelper(this,"rutasUtec",null,1);
+        db=databaseHelper.getWritableDatabase();
+
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.btnLogin:
                 String usuario = txtusuario.getText().toString();
                 String pass = txtpass.getText().toString();
 
@@ -61,20 +72,11 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"no se encontro el usuario",Toast.LENGTH_SHORT).show();
 
                 }
-
-            }
-        });
-
-
-        txtregistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.txtregistro:
                 Intent i = new Intent(getApplicationContext(), Registro.class);
                 startActivity(i);
-            }
-        });
+                break;
+        }
     }
-   
-
-
 }
