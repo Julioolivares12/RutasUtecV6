@@ -11,12 +11,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import sql.DatabaseHelper;
+
 
 public class Login extends AppCompatActivity {
 
     private EditText txtusuario, txtpass;
     private Button btnLogin;
     private TextView txtregistro;
+    private Cursor fila;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +34,34 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+                SQLiteDatabase db =databaseHelper.getWritableDatabase();
+
                 String usuario = txtusuario.getText().toString();
                 String pass = txtpass.getText().toString();
+
+                fila=db.rawQuery("select usuario , pass from usuarios where usuario='"+usuario+"'and pass='"+pass+"'",null);
+                if (fila.moveToFirst()==true){
+                    String usu =fila.getString(0);
+                    String pa = fila.getString(1);
+                    if (usuario.equals(usu)&&pass.equals(pa)){
+
+                        txtusuario.setText("");
+                        txtpass.setText("");
+                        Intent menu = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(menu);
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),"usuario o pass incorrectos",Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"no se encontro el usuario",Toast.LENGTH_SHORT).show();
+
+                }
+
             }
         });
 

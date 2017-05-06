@@ -12,7 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-import DatosDB.RutasUtecDB;
+
+import sql.DatabaseHelper;
 
 public class Registro extends AppCompatActivity {
 
@@ -36,18 +37,13 @@ public class Registro extends AppCompatActivity {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RutasUtecDB rutasUtecDB = new RutasUtecDB(getApplicationContext());
-                SQLiteDatabase db = rutasUtecDB.getWritableDatabase();
+                DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+                SQLiteDatabase db = databaseHelper.getWritableDatabase();
                 String usu = txtusuario.getText().toString();
                 String email = txtemail.getText().toString();
                 String pass = txtpassword.getText().toString();
-                ContentValues values = new ContentValues();
-                values.put("usuario",usu);
-                values.put("correo",email);
-                values.put("pass",pass);
 
-                db.insert("usuarios",null,values);
-                db.close();
+                db.execSQL("insert into usuarios (usuario,email,pass,idtipousu) values('"+usu+"','"+email+"','"+pass+"',2)");
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
             }
