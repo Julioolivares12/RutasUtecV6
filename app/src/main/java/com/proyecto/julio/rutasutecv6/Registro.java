@@ -28,7 +28,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_registro);
 
 
-        txtusuario = (EditText)findViewById(R.id.txtusuarioR)
+        txtusuario = (EditText)findViewById(R.id.txtusuarioR);
 
         txtpassword = (EditText)findViewById(R.id.txtpassR);
         txtemail = (EditText)findViewById(R.id.txtemailR);
