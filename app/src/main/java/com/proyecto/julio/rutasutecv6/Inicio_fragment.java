@@ -57,7 +57,7 @@ public class Inicio_fragment extends Fragment {
                 new Rutas(android.R.drawable.ic_dialog_map,"ruta 3"),
                 new Rutas(android.R.drawable.ic_dialog_map,"ruta 101")
         };*/
-       ArrayAdapter<String> adaptador = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,rutas);
+       ArrayAdapter<String> adaptador = new ArrayAdapter<>(getActivity().getApplicationContext(),android.R.layout.simple_list_item_1,rutas);
 
 
 
