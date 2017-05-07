@@ -28,10 +28,10 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_registro);
 
 
-        txtusuario = (EditText)findViewById(R.id.txtusuaio);
+        txtusuario = (EditText)findViewById(R.id.txtusuarioR)
 
-        txtpassword = (EditText)findViewById(R.id.txtpass);
-        txtemail = (EditText)findViewById(R.id.txtemail);
+        txtpassword = (EditText)findViewById(R.id.txtpassR);
+        txtemail = (EditText)findViewById(R.id.txtemailR);
 
         btnRegistrar=(Button)findViewById(R.id.btnResgistrar);
         btnCancelar=(Button)findViewById(R.id.btnCancelar);
@@ -51,7 +51,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 String email = txtemail.getText().toString();
                 String pass = txtpassword.getText().toString();
 
-                db.execSQL("insert into usuarios (usuario,correo,pass,idtipousu) values('"+usu+"','"+email+"','"+pass+"',2)");
+                db.execSQL("insert into usuarios (id,usuario,correo,pass,idtipousu) values(1,'"+usu+"','"+email+"','"+pass+"',2)");
                 db.close();
 
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);

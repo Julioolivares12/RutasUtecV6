@@ -36,13 +36,13 @@
             android:id="@+id/txtapellido"
             android:hint="apellido"/>-->
         <EditText
-            android:id="@+id/txtusuario"
+            android:id="@+id/txtusuarioR"
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:hint="usuario" />
 
         <EditText
-            android:id="@+id/txtemail"
+            android:id="@+id/txtemailR"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:hint="email" />
@@ -52,7 +52,7 @@
             android:id="@+id/txtfecha"
             android:hint="fecha de nacimiento"/>-->
         <EditText
-            android:id="@+id/txtpass"
+            android:id="@+id/txtpassR"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:hint="password" />
